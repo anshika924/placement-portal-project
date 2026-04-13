@@ -59,6 +59,20 @@
             gap: 40px;
         }
 
+        @media (max-width: 1200px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); gap: 30px; }
+            .team-header h1 { font-size: 36px; }
+        }
+
+        @media (max-width: 600px) {
+            .team-grid { grid-template-columns: 1fr; gap: 20px; }
+            .home-btn { position: sticky; top: 20px; left: 20px; margin-bottom: 40px; }
+            .about-wrapper { padding: 40px 20px; }
+            .team-header { margin-bottom: 40px; }
+            .team-header h1 { font-size: 28px; }
+            .team-card { padding: 30px 20px; border-radius: 30px; }
+        }
+
         .team-card {
             background: #ffffff;
             padding: 40px 20px;
@@ -133,14 +147,7 @@
             font-size: 15px;
         }
 
-        @media (max-width: 992px) {
-            .team-grid { grid-template-columns: repeat(2, 1fr); }
-        }
-
-        @media (max-width: 600px) {
-            .team-grid { grid-template-columns: 1fr; }
-            .home-btn { position: absolute; top: 20px; left: 20px; }
-        }
+        /* Responsive Fixes - Moved to Media Queries above */
     </style>
 </head>
 <body>

@@ -81,6 +81,34 @@ a { transition: all 0.3s ease; text-decoration: none; }
     box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8), 0 20px 60px rgba(0,0,0,0.05);
     padding: 0; /* Removing internal padding, handled by sub-elements */
     overflow: hidden;
+    transition: all 0.3s ease;
+}
+
+@media (max-width: 1024px) {
+    .dashboard-layout {
+        margin: 0;
+        border-radius: 0;
+        min-height: 100vh;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    .dashboard-layout {
+        flex-direction: column;
+    }
+    .neo-sidebar {
+        width: 100%;
+        height: auto;
+        padding: 20px;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid rgba(0,0,0,0.05);
+    }
+    .sidebar-logo { margin-bottom: 0; font-size: 18px; }
+    .neo-nav { display: none; } /* On mobile, we might need a drawer, but stacking for now */
+    .dashboard-content { padding: 20px; }
 }
 
 .neo-sidebar {
@@ -141,6 +169,12 @@ a { transition: all 0.3s ease; text-decoration: none; }
 .widget-title { font-size: 13px; text-transform: uppercase; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; }
 .widget-value { font-size: 32px; font-weight: 800; font-family: var(--font-heading); color: var(--accent-dark); }
 
+@media (max-width: 600px) {
+    .widget-grid { grid-template-columns: 1fr; gap: 20px; }
+    .neo-panel { padding: 20px; }
+    .widget-value { font-size: 24px; }
+}
+
 /* Forms */
 .neo-form-group { margin-bottom: 24px; }
 .neo-label { display: block; font-size: 13px; font-weight: 700; color: var(--text-secondary); margin-bottom: 12px; margin-left: 8px; }
@@ -200,4 +234,16 @@ a { transition: all 0.3s ease; text-decoration: none; }
     border-radius: 30px;
     padding: 40px;
     box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}
+
+@media (max-width: 480px) {
+    .auth-panel { padding: 30px 20px; border-radius: 20px; }
+    .neo-btn { width: 100%; }
+}
+
+/* Helper Classes */
+.mobile-only { display: none; }
+@media (max-width: 768px) {
+    .mobile-only { display: block; }
+    .desktop-only { display: none; }
 }
