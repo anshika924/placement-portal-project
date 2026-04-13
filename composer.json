@@ -1,0 +1,7 @@
+{
+  "name": "placement-portal",
+  "description": "Placement Portal Management System",
+  "require": {
+    "php": ">=7.4"
+  }
+}

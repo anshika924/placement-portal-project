@@ -2,6 +2,9 @@
 require_once 'config.php';
 session_start();
 
+// Detection for serverless environments
+$is_serverless = getenv('VERCEL') || getenv('RAILWAY_STATIC_URL');
+
 // Ensure student is logged in
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true || !isset($_SESSION["num"])){
     header("location: student_login.php");
