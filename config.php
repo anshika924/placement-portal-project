@@ -1,13 +1,17 @@
 <?php
 /**
  * Database credentials - Placement Portal Management
+ * Refactored for Cloud Deployment
  */
-$host = "localhost";
-$user = "root";
-$password = "";
 
-// Smart DB Detection: Try placement_portal_new first, then fallback to miniproject
-$databases = ["placement_portal_new", "miniproject", "placement_portal"];
+// Use Environment Variables for Production, with local fallbacks for XAMPP
+$host     = getenv('DB_HOST')     ?: "localhost";
+$user     = getenv('DB_USER')     ?: "root";
+$password = getenv('DB_PASSWORD') ?: "";
+$dbname   = getenv('DB_NAME')     ?: "placement_portal_new";
+
+// List of databases to try (for legacy support)
+$databases = [$dbname, "miniproject", "placement_portal"];
 $conn = false;
 $active_db = "NONE";
 
@@ -22,9 +26,12 @@ foreach ($databases as $db_name) {
 
 // Final fallback: Connection without DB to prevent fatal crashes
 if($conn === false){
-    $conn = mysqli_connect($host, $user, $password);
+    $conn = @mysqli_connect($host, $user, $password);
     if ($conn === false) {
-        die("ERROR: Could not connect to MySQL server. Ensure XAMPP is running.");
+        // Only die if we are not in a serverless environment where DB might be lazy-loaded
+        if (!getenv('VERCEL') && !getenv('RAILWAY_STATIC_URL')) {
+            die("ERROR: Could not connect to MySQL server. Ensure your Database is running.");
+        }
     }
 }
 

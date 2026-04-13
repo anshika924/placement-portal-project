@@ -368,7 +368,7 @@
                 <a href="#contact" class="nav-link" onclick="toggleMenu()">Contact</a>
             </div>
             <div style="display: flex; align-items: center; gap: 20px;">
-                <a href="javascript:void(0)" onclick="showDemoAlert()" class="neo-btn neo-btn-emerald" style="padding: 10px 25px;">Sign In</a>
+                <a href="student_login.php" class="neo-btn neo-btn-emerald" style="padding: 10px 25px;">Sign In</a>
                 <div class="mobile-toggle" onclick="toggleMenu()">
                     <i class="fas fa-bars"></i>
                 </div>
@@ -380,13 +380,13 @@
                 <div class="hero-text">
                     <h1>Dream. Match. <br>Achieve.</h1>
                     <p>The smarter way to bridge the gap between education and your dream career. Empowered by AI, designed for students.</p>
-                    <a href="javascript:void(0)" onclick="showDemoAlert()" class="neo-btn neo-btn-emerald" style="padding: 15px 35px; border-radius: 50px;">Apply Now <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
+                    <a href="student_login.php" class="neo-btn neo-btn-emerald" style="padding: 15px 35px; border-radius: 50px;">Apply Now <i class="fas fa-arrow-right" style="margin-left: 10px;"></i></a>
                 </div>
             </div>
         </div>
 
         <div class="portal-grid">
-            <a href="javascript:void(0)" onclick="showDemoAlert('HOD Login')" class="portal-card">
+            <a href="hod_login.php" class="portal-card">
                 <h3>Department Authority</h3>
                 <p>Verify eligibility, manage department student records, and monitor real-time placement statistics.</p>
                 <div class="card-footer">
@@ -394,7 +394,7 @@
                     <i class="fas fa-chevron-right" style="color: #cbd5e1;"></i>
                 </div>
             </a>
-            <a href="javascript:void(0)" onclick="showDemoAlert('Student Login')" class="portal-card">
+            <a href="student_login.php" class="portal-card">
                 <h3>Student Portfolio</h3>
                 <p>Build your professional profile, track live recruitment drives, and apply to top-tier companies.</p>
                 <div class="card-footer">
@@ -402,7 +402,7 @@
                     <i class="fas fa-chevron-right" style="color: #cbd5e1;"></i>
                 </div>
             </a>
-            <a href="javascript:void(0)" onclick="showDemoAlert('Admin Portal')" class="portal-card">
+            <a href="staff_login.php" class="portal-card">
                 <h3>Placements Admin</h3>
                 <p>Oversee system operations, configure drive settings, and manage master institutional data.</p>
                 <div class="card-footer">
@@ -557,30 +557,11 @@
 
     <div id="live-ticker-container" style="position: fixed; bottom: 30px; right: 30px; z-index: 1000; display: flex; flex-direction: column; gap: 15px;"></div>
 
-    <!-- Static Demo Alert Overlay -->
-    <div id="demoModal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); z-index: 2000; justify-content: center; align-items: center; backdrop-filter: blur(5px);">
-        <div style="background: white; padding: 40px; border-radius: 30px; max-width: 450px; text-align: center; box-shadow: 0 30px 60px rgba(0,0,0,0.3);">
-            <div style="width: 70px; height: 70px; background: #f0fdf4; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #10b981; margin: 0 auto 20px; font-size: 30px;">
-                <i class="fas fa-info-circle"></i>
-            </div>
-            <h2 id="demoTitle" style="color: #0f172a; margin-bottom: 15px;">Static Demo Mode</h2>
-            <p style="color: #64748b; font-size: 16px; line-height: 1.6; margin-bottom: 30px;">
-                This project is currently running in <strong>Static Showcase mode</strong> on GitHub Pages. 
-                Full database functionality (Logins, Dashboards, CRUD) requires a PHP server which is not supported by GitHub Pages.
-            </p>
-            <button onclick="document.getElementById('demoModal').style.display='none'" class="neo-btn neo-btn-emerald" style="width: 100%; padding: 15px; border-radius: 50px;">Understood</button>
-        </div>
-    </div>
 
     <script>
         function toggleMenu() {
             const navLinks = document.getElementById('navLinks');
             navLinks.classList.toggle('active');
-        }
-
-        function showDemoAlert(feature = "This feature") {
-            document.getElementById('demoTitle').innerText = feature + " (Demo)";
-            document.getElementById('demoModal').style.display = 'flex';
         }
 
         function toggleAI() {
