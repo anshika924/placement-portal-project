@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Team | Placement Portal</title>
+    
+    <!-- Global Styles -->
+    <link rel="stylesheet" href="stylesheet.css">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <style>
+        body {
+            background-color: #f8fafc;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .about-wrapper {
+            width: 100%;
+            max-width: 1200px;
+            padding: 80px 40px;
+            text-align: center;
+        }
+
+        .home-btn {
+            position: fixed;
+            top: 40px;
+            left: 40px;
+            z-index: 100;
+        }
+
+        .team-header {
+            margin-bottom: 80px;
+        }
+
+        .team-header h1 {
+            font-size: 48px;
+            color: var(--accent-dark);
+            margin-bottom: 15px;
+            font-weight: 800;
+        }
+
+        .team-header p {
+            font-size: 18px;
+            color: var(--text-secondary);
+        }
+
+        .team-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+        }
+
+        .team-card {
+            background: #ffffff;
+            padding: 40px 20px;
+            border-radius: 40px;
+            box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+            border: 1px solid rgba(0,0,0,0.02);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .team-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 30px 60px rgba(0,0,0,0.1);
+            border-color: #10b981;
+        }
+
+        .avatar-circle {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+            background: #ffffff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 44px;
+            color: #10b981;
+            box-shadow: 10px 10px 20px #d1d5d8, -10px -10px 20px #ffffff;
+        }
+
+        .team-card h3 {
+            font-size: 24px;
+            color: var(--accent-dark);
+            margin-bottom: 8px;
+        }
+
+        .team-role {
+            font-size: 14px;
+            font-weight: 700;
+            color: #10b981;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .contact-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .contact-item {
+            font-size: 14px;
+            color: var(--text-secondary);
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
+
+        .contact-item:hover {
+            color: #10b981;
+        }
+
+        .contact-item i {
+            color: var(--accent-slate);
+            font-size: 15px;
+        }
+
+        @media (max-width: 992px) {
+            .team-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .team-grid { grid-template-columns: 1fr; }
+            .home-btn { position: absolute; top: 20px; left: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+    <a href="mainpage.html" class="home-btn neo-btn" style="text-decoration: none; display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px;">
+        <i class="fas fa-arrow-left"></i> Home
+    </a>
+
+    <div class="about-wrapper">
+        <div class="team-header">
+            <h1>Placement Portal Team</h1>
+            <p>Built with precision, designed for scale.</p>
+        </div>
+
+        <div class="team-grid">
+            <!-- Anshika -->
+            <div class="team-card">
+                <div class="avatar-circle">
+                    <i class="fas fa-crown"></i>
+                </div>
+                <h3>Anshika</h3>
+                <span class="team-role">Team Lead</span>
+                <div class="contact-list">
+                    <a href="tel:9899948877" class="contact-item"><i class="fas fa-phone-alt"></i> 9899948877</a>
+                    <a href="mailto:anshikaaa924@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> anshikaaa924@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Bhavya -->
+            <div class="team-card">
+                <div class="avatar-circle">
+                    <i class="fas fa-user-graduate"></i>
+                </div>
+                <h3>Bhavya</h3>
+                <span class="team-role">Team Member</span>
+                <div class="contact-list">
+                    <a href="tel:123456789" class="contact-item"><i class="fas fa-phone-alt"></i> 123456789</a>
+                    <a href="mailto:bhavya@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> bhavya@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Amara -->
+            <div class="team-card">
+                <div class="avatar-circle">
+                    <i class="fas fa-user-astronaut"></i>
+                </div>
+                <h3>Amara Firdous</h3>
+                <span class="team-role">Team Member</span>
+                <div class="contact-list">
+                    <a href="tel:123456789" class="contact-item"><i class="fas fa-phone-alt"></i> 123456789</a>
+                    <a href="mailto:amara@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> amara@gmail.com</a>
+                </div>
+            </div>
+
+            <!-- Harshita -->
+            <div class="team-card">
+                <div class="avatar-circle">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <h3>Harshita</h3>
+                <span class="team-role">Team Member</span>
+                <div class="contact-list">
+                    <a href="tel:123456789" class="contact-item"><i class="fas fa-phone-alt"></i> 123456789</a>
+                    <a href="mailto:harshita@gmail.com" class="contact-item"><i class="fas fa-envelope"></i> harshita@gmail.com</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

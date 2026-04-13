@@ -1,0 +1,203 @@
+/* 
+===================================================
+Starline UI Design System 🚀
+Theme: Ultra-Modern Glassmorphism (Lime & Frosted Glass)
+===================================================
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+
+:root {
+    /* Core Glass background colors */
+    --bg-primary: rgba(255, 255, 255, 0.6);
+    --bg-panel: rgba(255, 255, 255, 1);
+    
+    /* Theme Accents */
+    --accent-emerald: #cce93a; /* Starline Lime */
+    --accent-emerald-hover: #b8d424;
+    --accent-dark: #1e293b;
+    --accent-slate: #94a3b8;
+
+    /* Typography */
+    --text-primary: #334155;
+    --text-secondary: #64748b;
+    --font-heading: 'Outfit', sans-serif;
+    --font-body: 'Inter', sans-serif;
+
+    /* Semantic */
+    --success: #34d399;
+    --danger: #ef4444;
+
+    /* Starline Shadows */
+    --neo-shadow: 0 10px 40px rgba(0,0,0,0.03);
+    --neo-shadow-sm: 0 4px 15px rgba(0,0,0,0.02);
+    --neo-shadow-hover: 0 15px 50px rgba(0,0,0,0.05);
+    
+    /* Starline Inputs */
+    --neo-inset: 0 2px 10px rgba(0,0,0,0.02);
+    --neo-inset-sm: 0 1px 5px rgba(0,0,0,0.01);
+
+    /* Glass Panels */
+    --glass-bg: rgba(255, 255, 255, 0.5);
+    --glass-border: 1px solid rgba(255, 255, 255, 0.4);
+    --glass-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+}
+
+/* GLOBAL RESET & BASE */
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+    font-family: var(--font-body);
+    color: var(--text-primary);
+    -webkit-font-smoothing: antialiased;
+    min-height: 100vh;
+    background: radial-gradient(circle at 0% 100%, #e8dcff 0%, transparent 40%),
+                radial-gradient(circle at 100% 0%, #dcfce7 0%, transparent 40%),
+                radial-gradient(circle at 100% 100%, #e0f2fe 0%, #f1f5f9 60%);
+    background-attachment: fixed;
+    background-color: #f1f5f9;
+}
+
+h1, h2, h3, h4, h5, h6 { font-family: var(--font-heading); color: var(--accent-dark); font-weight: 700; }
+a { transition: all 0.3s ease; text-decoration: none; }
+
+/* Page Transition Fades */
+.page-transition { animation: fadeIn 0.6s ease-out forwards; }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+.animate-fade-up { animation: fadeIn 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+.delay-1 { animation-delay: 0.1s; } .delay-2 { animation-delay: 0.2s; } .delay-3 { animation-delay: 0.3s; }
+
+/* Dashboard Layout mapped to Starline Glass Container */
+.dashboard-layout {
+    display: flex;
+    min-height: 94vh;
+    max-width: 1600px;
+    margin: 3vh auto;
+    background: var(--glass-bg);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 40px;
+    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.8), 0 20px 60px rgba(0,0,0,0.05);
+    padding: 0; /* Removing internal padding, handled by sub-elements */
+    overflow: hidden;
+}
+
+.neo-sidebar {
+    width: 280px;
+    flex-shrink: 0;
+    background-color: transparent; /* No background, it's just part of the glass pane */
+    padding: 40px 30px;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+.sidebar-logo {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    font-weight: 800;
+    color: var(--accent-dark);
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.sidebar-logo i { font-size: 20px; color: var(--accent-dark); }
+
+.neo-nav { display: flex; flex-direction: column; gap: 8px; }
+
+.neo-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 12px 20px;
+    border-radius: 50px;
+    color: var(--text-secondary);
+    font-weight: 600;
+    font-size: 14px;
+    background: transparent;
+    transition: all 0.2s ease;
+}
+
+.neo-nav-link i { font-size: 18px; width: 24px; text-align: center; color: var(--accent-slate); transition: all 0.2s ease; }
+
+.neo-nav-link:hover { background: rgba(255,255,255,0.6); color: var(--accent-dark); }
+.neo-nav-link:hover i { color: var(--accent-dark); }
+
+.neo-nav-link.active { background: var(--accent-emerald); color: var(--accent-dark); font-weight: 700; box-shadow: 0 4px 15px rgba(204, 233, 58, 0.3); }
+.neo-nav-link.active i { color: var(--accent-dark); }
+
+.dashboard-content { flex-grow: 1; padding: 40px 60px 40px 20px; display: flex; flex-direction: column; gap: 32px; }
+
+/* Panels (White flat cards with high radius) */
+.neo-panel { background-color: var(--bg-panel); border-radius: 24px; box-shadow: var(--neo-shadow); padding: 32px; transition: all 0.3s ease; }
+.neo-panel:hover { box-shadow: var(--neo-shadow-hover); }
+
+/* Widgets */
+.widget-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 32px; }
+.neo-widget { background-color: var(--bg-panel); border-radius: 24px; box-shadow: var(--neo-shadow); padding: 24px; display: flex; flex-direction: column; }
+.widget-icon-box { width: 48px; height: 48px; border-radius: 16px; background: rgba(0,0,0,0.02); display: flex; align-items: center; justify-content: center; color: var(--accent-dark); font-size: 20px; margin-bottom: 20px; }
+.widget-title { font-size: 13px; text-transform: uppercase; font-weight: 700; color: var(--text-secondary); margin-bottom: 8px; }
+.widget-value { font-size: 32px; font-weight: 800; font-family: var(--font-heading); color: var(--accent-dark); }
+
+/* Forms */
+.neo-form-group { margin-bottom: 24px; }
+.neo-label { display: block; font-size: 13px; font-weight: 700; color: var(--text-secondary); margin-bottom: 12px; margin-left: 8px; }
+.neo-input { width: 100%; padding: 16px 24px; border: 1px solid rgba(0,0,0,0.05); background-color: white; border-radius: 50px; color: var(--text-primary); font-size: 14px; font-family: var(--font-body); font-weight: 500; transition: all 0.3s ease; box-shadow: var(--neo-shadow-sm); }
+.neo-input:focus { outline: none; border: 1px solid var(--accent-emerald); box-shadow: 0 0 0 4px rgba(204, 233, 58, 0.2); }
+.neo-select { appearance: none; background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E"); background-repeat: no-repeat; background-position: right 20px center; }
+
+/* Buttons */
+.neo-btn { display: inline-flex; align-items: center; justify-content: center; gap: 12px; padding: 14px 32px; border: none; border-radius: 50px; font-family: var(--font-heading); font-weight: 700; font-size: 14px; cursor: pointer; transition: all 0.2s ease; background-color: white; color: var(--accent-dark); box-shadow: var(--neo-shadow-sm); text-decoration: none; border: 1px solid rgba(0,0,0,0.02);}
+.neo-btn:hover { background-color: #f8fafc; transform: translateY(-2px); box-shadow: var(--neo-shadow); }
+.neo-btn:active { transform: translateY(0); }
+.neo-btn i { font-size: 18px; color: inherit; }
+.neo-btn-emerald { background-color: var(--accent-dark); color: white; border: none; } 
+.neo-btn-emerald:hover { background-color: #0f172a; color: white;}
+
+/* Tables */
+.neo-table-container { width: 100%; overflow-x: auto; background: white; border-radius: 20px; }
+.neo-table { width: 100%; border-collapse: collapse; }
+.neo-table th { text-transform: uppercase; font-size: 12px; font-weight: 700; color: var(--text-secondary); padding: 20px 24px; text-align: left; border-bottom: 2px solid #f1f5f9; }
+.neo-table td { padding: 20px 24px; background: white; color: var(--text-primary); font-weight: 600; font-size: 13px; border-bottom: 1px solid #f8fafc; }
+.neo-table tr:last-child td { border-bottom: none; }
+.neo-table tbody tr:hover td { background: #f8fafc; }
+
+/* Status Badges */
+.neo-badge { padding: 6px 16px; border-radius: 50px; font-size: 11px; font-weight: 800; display: inline-flex; align-items: center; gap: 6px; text-transform: uppercase; }
+.neo-badge.success { color: var(--success); background: #f0fdf4; }
+.neo-badge.error { color: var(--danger); background: #fef2f2; }
+
+/* User Badge */
+.user-badge { display: flex; align-items: center; gap: 12px; padding: 5px 16px 5px 5px; background: white; border-radius: 50px; box-shadow: var(--neo-shadow-sm); }
+.user-badge img { border-radius: 50%; width: 34px; height: 34px; }
+
+/* AI Assistant */
+.ai-assistant-panel { position: fixed; bottom: 40px; right: 40px; width: 360px; background: var(--glass-bg); backdrop-filter: blur(20px); border: var(--glass-border); border-radius: 24px; box-shadow: var(--glass-shadow); z-index: 1000; display: flex; flex-direction: column; overflow: hidden; }
+.ai-header { padding: 20px 24px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid rgba(0,0,0,0.05); }
+.ai-header-title { font-size: 14px; font-weight: 700; color: var(--accent-dark); display: flex; align-items: center; gap: 8px; }
+.ai-body { padding: 24px; flex-grow: 1; min-height: 150px; max-height: 300px; overflow-y: auto; font-size: 14px; color: var(--text-secondary); line-height: 1.6; }
+.ai-input-area { padding: 16px; background: rgba(255,255,255,0.3); display: flex; gap: 12px; }
+.ai-input { flex-grow: 1; background: white; border: none; border-radius: 50px; padding: 12px 16px; font-size: 13px; box-shadow: var(--neo-shadow-sm); color: var(--text-primary); }
+.ai-input:focus { outline: none; }
+.ai-send { background: var(--accent-dark); color: white; border: none; border-radius: 50px; width: 42px; height: 42px; display: flex; align-items: center; justify-content: center; cursor: pointer; } 
+
+/* Auth wrapper specifically for standalone auth pages */
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+.auth-panel {
+    width: 100%;
+    max-width: 480px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-radius: 30px;
+    padding: 40px;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.05);
+}

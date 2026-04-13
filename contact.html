@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | Placement Portal</title>
+    <link rel="stylesheet" href="stylesheet.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        body {
+            background-color: var(--bg-soft);
+            color: var(--text-primary);
+            font-family: 'Inter', 'Segoe UI', sans-serif;
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-card {
+            width: 100%;
+            max-width: 900px;
+            background-color: var(--bg-soft);
+            border-radius: 30px;
+            padding: 50px;
+            box-shadow: var(--neo-panel);
+            margin: 20px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 40px;
+        }
+
+        @media(min-width: 768px) {
+            .contact-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .header-box h1 {
+            color: var(--accent-dark);
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body class="page-transition">
+
+<div style="position: absolute; top: 30px; left: 30px;">
+    <a href="mainpage.html" class="neo-btn" style="text-decoration: none;"><i class="fas fa-arrow-left"></i> Home</a>
+</div>
+
+<div class="contact-card animate-fade-up">
+    <div class="header-box" style="text-align: center; margin-bottom: 40px;">
+        <h1>Get In Touch</h1>
+        <p style="color: var(--text-secondary); font-size: 16px;">We're here to assist with any placement inquiries.</p>
+    </div>
+
+    <div class="contact-grid">
+        <div style="border-radius: 20px; overflow: hidden; box-shadow: var(--neo-inset);">
+            <!-- Simulated map placeholder, usually you'd embed a map here -->
+            <div style="width: 100%; height: 100%; background: linear-gradient(45deg, #e0e5ec, #f0f5fc); display: flex; align-items: center; justify-content: center; flex-direction: column; min-height: 250px; color: var(--accent-emerald);">
+                <i class="fas fa-map-marked-alt" style="font-size: 48px; margin-bottom: 15px;"></i>
+                <span style="font-weight: 600;">MVGR College Campus</span>
+            </div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; justify-content: center;">
+            <div class="neo-panel" style="margin-bottom: 0;">
+                <h2 style="color: var(--accent-dark); margin-bottom: 20px; font-size: 20px;">Department of Computer Science & Engineering</h2>
+                <h3 style="color: var(--text-secondary); margin-bottom: 25px; font-size: 16px; font-weight: 500;">ABC College of Engineering</h3>
+                
+                <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px; color: var(--text-secondary);">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; box-shadow: var(--neo-inset); display: flex; align-items: center; justify-content: center; color: var(--accent-emerald);"><i class="fas fa-users"></i></div>
+                    <span style="font-weight: 500;">Anshika, Harshita, Bhavya, Amara</span>
+                </div>
+
+                <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px; color: var(--text-secondary);">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; box-shadow: var(--neo-inset); display: flex; align-items: center; justify-content: center; color: var(--accent-emerald);"><i class="fas fa-phone-alt"></i></div>
+                    <span style="font-weight: 500;">+91 444 888 7777</span>
+                </div>
+
+                <div style="margin-bottom: 15px; display: flex; align-items: center; gap: 15px; color: var(--text-secondary);">
+                    <div style="width: 40px; height: 40px; border-radius: 50%; box-shadow: var(--neo-inset); display: flex; align-items: center; justify-content: center; color: var(--accent-emerald);"><i class="fas fa-envelope"></i></div>
+                    <span style="font-weight: 500;">hod.cse@abc.edu.in</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>
